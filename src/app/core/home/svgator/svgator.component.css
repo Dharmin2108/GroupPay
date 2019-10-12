@@ -1,0 +1,51 @@
+.all-svgs {
+    width: 40%;
+}
+
+.svgator {
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    background: url("../../../../assets/facets.png");
+    background-position: center 0px;
+    background-size: 1000px;
+    background-repeat: repeat-x;
+}
+
+.small-svgs {
+    display: flex;
+    justify-items: center;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.small-svg-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 290px;
+}
+
+.share-expenses {
+    font-size: 30px;
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* .plane, .any {
+    color: #1cc29f;
+}
+
+.house {
+    color: #8656cd;
+}
+
+.love {
+    color: #a6002f;
+} */
+
+#siguup-button {
+    width: 70%;
+}
