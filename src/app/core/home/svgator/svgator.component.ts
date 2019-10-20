@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 import * as $ from 'jquery';
 
@@ -24,15 +24,17 @@ export class SvgatorComponent implements OnInit {
   }
 
   onClickSmallSvg(index){
-    this.animateSignUpButton(this.index, index);
-    this.hideSvg(this.index);
-    window.setTimeout(()=>{
-      this.showSvg(index);
-    },1000)
-    this.index = index;
-    if(this.isSlideShowRunning){
-      window.clearInterval(this.slideShow);
-      this.isSlideShowRunning = false;
+    if(this.index != index){
+      this.animateSignUpButton(this.index, index);
+      this.hideSvg(this.index);
+      window.setTimeout(()=>{
+        this.showSvg(index);
+      },1000)
+      this.index = index;
+      if(this.isSlideShowRunning){
+        window.clearInterval(this.slideShow);
+        this.isSlideShowRunning = false;
+      }
     }
   }
   showSvg(index = this.index) {
@@ -103,5 +105,8 @@ export class SvgatorComponent implements OnInit {
       },1000)
     },5000)
   }
-
+  // @HostListener('window:resize', ['$event'])
+  // onResize(event){
+  //   console.log("Width: " + event.target.innerWidth);
+  // }
 }
